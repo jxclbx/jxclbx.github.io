@@ -213,7 +213,7 @@
                 methods: {
                     finishLoad: function() {
                         var e = document.getElementById("loader-mask");
-                        e && e.remove(), this.$notify.info({ title: "", message: '我们使用PWA技术，无网络也能使用<br>最近更新：提供实验性ogg支持', dangerouslyUseHTMLString: !0, duration: 1e4, position: "top-left" })
+                        e && e.remove(), this.$notify.info({ title: "", message: '我们使用PWA技术，无网络也能使用<br/>最近更新：提供实验性ogg支持', dangerouslyUseHTMLString: !0, duration: 1e4, position: "top-left" })
                     },
                     showSuccess: function(e) {
                         if (e.status) {
