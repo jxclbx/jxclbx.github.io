@@ -40,11 +40,11 @@
 <meta property="og:title" content="Hexo博客自定义页面跳过渲染">
 <meta property="og:url" content="http://jxclbx.github.io/2023/05/08/Hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BF%87%E6%B8%B2%E6%9F%93/index.html">
 <meta property="og:site_name" content="jxclbx的小站">
-<meta property="og:description" content="Hexo自定义原理Hexo 系列的博客中的文章都是经Hexo的主题渲染的静态网页。所以Hexo博客大部分都呈现出一种高度的统一化与规范化。不过 Hexo 提供了跳过渲染功能，使得我们可以直接在博客中放入自定义网页。 比如在博客中放入图片、自定义404.html、自定义About页面、简历等 创建自定义网页网页可以是自己编写的，也可以是别人现成的源码（下载喜欢的页面）。 网页编写完成后，在Hexo\">
+<meta property="og:description" content="Hexo自定义原理 Hexo 系列的博客中的文章都是经Hexo的主题渲染的静态网页。所以Hexo博客大部分都呈现出一种高度的统一化与规范化。不过 Hexo 提供了跳过渲染功能，使得我们可以直接在博客中放入自定义网页。 比如在博客中放入图片、自定义404.html、自定义About页面、简历等  创建自定义网页 网页可以是自己编写的，也可以是别人现成的源码（下载喜欢的页面）。 网页编写完成后，在H">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg">
 <meta property="article:published_time" content="2023-05-08T07:39:01.000Z">
-<meta property="article:modified_time" content="2023-05-08T07:47:01.039Z">
+<meta property="article:modified_time" content="2023-08-31T04:18:30.947Z">
 <meta property="article:author" content="Jxclbx">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="音乐">
@@ -1745,7 +1745,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1693450826287),
+    lastupdate: new Date(1693455629548),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2594,32 +2594,42 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="Hexo自定义原理"><a href="#Hexo自定义原理" class="headerlink" title="Hexo自定义原理"></a>Hexo自定义原理</h2><p>Hexo 系列的博客中的文章都是经Hexo的主题渲染的静态网页。所以Hexo博客大部分都呈现出一种高度的统一化与规范化。不过 Hexo 提供了跳过渲染功能，使得我们可以直接在博客中放入自定义网页。</p>
+    <h2 id="hexo自定义原理"><a class="markdownIt-Anchor" href="#hexo自定义原理"></a> Hexo自定义原理</h2>
+<p>Hexo 系列的博客中的文章都是经Hexo的主题渲染的静态网页。所以Hexo博客大部分都呈现出一种高度的统一化与规范化。不过 Hexo 提供了跳过渲染功能，使得我们可以直接在博客中放入自定义网页。</p>
 <p>比如在博客中放入图片、自定义404.html、自定义About页面、简历等</p>
-<h2 id="创建自定义网页"><a href="#创建自定义网页" class="headerlink" title="创建自定义网页"></a><strong>创建自定义网页</strong></h2><p>网页可以是自己编写的，也可以是别人现成的源码（下载喜欢的页面）。</p>
+<h2 id="创建自定义网页"><a class="markdownIt-Anchor" href="#创建自定义网页"></a> <strong>创建自定义网页</strong></h2>
+<p>网页可以是自己编写的，也可以是别人现成的源码（下载喜欢的页面）。</p>
 <p>网页编写完成后，在Hexo\source目录下创建一个文件夹（文件夹名称任意，比如我创建的是about这个文件夹，部署完成后，访问<a target="_blank" rel="noopener" href="http://mrlsm.github.io/about%E5%8D%B3%E5%8F%AF%E7%9C%8B%E5%88%B0%E6%95%88%E6%9E%9C%EF%BC%8C%E4%BE%9D%E6%AD%A4%E7%B1%BB%E6%8E%A8%EF%BC%89">http://mrlsm.github.io/about即可看到效果，依此类推）</a></p>
 <p>将 html 文件放置于此文件夹，并重命名为 index.html 。</p>
-<h2 id="跳过渲染"><a href="#跳过渲染" class="headerlink" title="跳过渲染"></a><strong>跳过渲染</strong></h2><p>跳过渲染有下述两种方法：</p>
+<h2 id="跳过渲染"><a class="markdownIt-Anchor" href="#跳过渲染"></a> <strong>跳过渲染</strong></h2>
+<p>跳过渲染有下述两种方法：</p>
 <ol>
-<li><p>在自定义页面的开头添加如下：</p>
+<li>
+<p>在自定义页面的开头添加如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">layout: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
 <p>添加该指令后，执行 hexo g命令时便会跳过该 index.html文件，使得index.html不受当前 hexo 主题影响，完全是一个独立的网页，如果网页引用了 css 或 js，css 和 js 需使用外链或者将css js 文件放入index.html同目录下引用。</p>
 <p>引用图片亦是如此</p>
 </li>
-<li><p>在_config.yml文件中设置skip_render<br>使用编辑器打开 Hexo 目录下的_config.yml文件，找到skip_render</p>
+<li>
+<p>在_config.yml文件中设置skip_render<br>
+使用编辑器打开 Hexo 目录下的_config.yml文件，找到skip_render</p>
 <p>skip_render一般有以下四种常用参数：</p>
 </li>
 </ol>
 <ul>
-<li><p>跳过source目录下的 test.html: skip_render: test.html</p>
+<li>
+<p>跳过source目录下的 test.html: skip_render: test.html</p>
 </li>
-<li><p>跳过source目录下 test 文件夹内所有文件：skip_render: test&#x2F;*</p>
+<li>
+<p>跳过source目录下 test 文件夹内所有文件：skip_render: test/*</p>
 </li>
-<li><p>跳过source目录下 test 文件夹内所有文件包括子文件夹以及子文件夹内的文件：skip_render: test&#x2F;**<br>跳过多个路径：</p>
+<li>
+<p>跳过source目录下 test 文件夹内所有文件包括子文件夹以及子文件夹内的文件：skip_render: test/**<br>
+跳过多个路径：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">skip_render:</span><br><span class="line">- curriculumVitae/**</span><br><span class="line">- DecrypeMusic/**</span><br></pre></td></tr></table></figure>
 <p>最后执行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 
   </div>
@@ -2645,10 +2655,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-05-08T15:47:01+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-08-31T12:18:30+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：May 8, 2023</p>
+    <p>更新于：Aug 31, 2023</p>
   </a>
 </div>
 
@@ -2730,11 +2740,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2023/05/09/%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8VSCode%E7%BC%96%E5%86%99HTML%E6%96%87%E4%BB%B6/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>快速使用VSCode编写HTML文件</p>
-          <p class='content'>安装安装相关插件——搜索html,安装如下插件
+          <p class='content'> 安装
+安装相关插件——搜索html,安装如下插件
 
 再次打开插件商店，搜索open in browser
 
-回到你的html文件，ctrl+s保存文件，然后shift+alt+b，在弹出的窗口中输...</p>
+回到你的html文件，ctrl+s保存文件，然后shift+alt+b，在弹出的窗口...</p>
         </a>
       
       
@@ -2814,7 +2825,7 @@ BFS DFS树的层序遍历（3月29日）
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8E%9F%E7%90%86"><span class="toc-text">Hexo自定义原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E9%A1%B5"><span class="toc-text">创建自定义网页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%B3%E8%BF%87%E6%B8%B2%E6%9F%93"><span class="toc-text">跳过渲染</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8E%9F%E7%90%86"><span class="toc-text"> Hexo自定义原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E9%A1%B5"><span class="toc-text"> 创建自定义网页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%B3%E8%BF%87%E6%B8%B2%E6%9F%93"><span class="toc-text"> 跳过渲染</span></a></li></ol>
     </div>
   </section>
 
@@ -3384,7 +3395,7 @@ BFS DFS树的层序遍历（3月29日）
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"jxclbx的小站","url":"http://jxclbx.github.io/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Jxclbx","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg"},"url":"http://jxclbx.github.io/","sameAs":["https://github.com/volantis-x"],"description":"诶嘿"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jxclbx.github.io/","name":"jxclbx的小站"}},{"@type":"ListItem","position":2,"item":{"@id":"http://jxclbx.github.io/categories/技术/","name":"技术"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jxclbx.github.io/2023/05/08/Hexo博客自定义页面跳过渲染/","name":"Hexo博客自定义页面跳过渲染"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"jxclbx的小站","url":"http://jxclbx.github.io/","keywords":null,"description":"诶嘿","author":{"@type":"Person","name":"Jxclbx","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg"},"url":"http://jxclbx.github.io/","description":"诶嘿"},"publisher":{"@type":"Organization","name":"jxclbx的小站","url":"http://jxclbx.github.io/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://jxclbx.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Hexo博客自定义页面跳过渲染","description":"诶嘿","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://jxclbx.github.io/2023/05/08/Hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BF%87%E6%B8%B2%E6%9F%93/"},"author":{"@type":"Person","name":"Jxclbx","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg"},"url":"http://jxclbx.github.io/"},"publisher":{"@type":"Organization","name":"jxclbx的小站","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg","width":192,"height":192}},"url":"http://jxclbx.github.io/2023/05/08/Hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BF%87%E6%B8%B2%E6%9F%93/","wordCount":0,"datePublished":"2023-05-08T07:39:01.000Z","dateModified":"2023-05-08T07:47:01.039Z","articleSection":"技术","keywords":"hexo,音乐","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"jxclbx的小站","url":"http://jxclbx.github.io/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Jxclbx","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg"},"url":"http://jxclbx.github.io/","sameAs":["https://github.com/volantis-x"],"description":"诶嘿"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jxclbx.github.io/","name":"jxclbx的小站"}},{"@type":"ListItem","position":2,"item":{"@id":"http://jxclbx.github.io/categories/技术/","name":"技术"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jxclbx.github.io/2023/05/08/Hexo博客自定义页面跳过渲染/","name":"Hexo博客自定义页面跳过渲染"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"jxclbx的小站","url":"http://jxclbx.github.io/","keywords":null,"description":"诶嘿","author":{"@type":"Person","name":"Jxclbx","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg"},"url":"http://jxclbx.github.io/","description":"诶嘿"},"publisher":{"@type":"Organization","name":"jxclbx的小站","url":"http://jxclbx.github.io/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://jxclbx.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Hexo博客自定义页面跳过渲染","description":"诶嘿","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://jxclbx.github.io/2023/05/08/Hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BF%87%E6%B8%B2%E6%9F%93/"},"author":{"@type":"Person","name":"Jxclbx","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg"},"url":"http://jxclbx.github.io/"},"publisher":{"@type":"Organization","name":"jxclbx的小站","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg","width":192,"height":192}},"url":"http://jxclbx.github.io/2023/05/08/Hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BF%87%E6%B8%B2%E6%9F%93/","wordCount":0,"datePublished":"2023-05-08T07:39:01.000Z","dateModified":"2023-08-31T04:18:30.947Z","articleSection":"技术","keywords":"hexo,音乐","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg","width":192,"height":192}}]</script>
 
 
 

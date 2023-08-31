@@ -1741,7 +1741,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1693450826287),
+    lastupdate: new Date(1693455629548),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2545,9 +2545,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
   
-    <span hidden>
-      <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg">
-    </span>
+    <div class='headimg-div'>
+      <a class='headimg-a' href="/2023/08/28/%E6%B5%8B%E8%AF%95%E8%87%AA%E5%8A%A8%E5%9B%BE%E5%BA%8A/">
+        <img itemprop="image" class='headimg' alt="测试自动图床" src='https://gcore.jsdelivr.net/gh/jxclbx/blogImages/imagePost/1693158099919.png'/>
+      </a>
+    </div>
   
   
     
@@ -2624,9 +2626,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
   
-    <span hidden>
-      <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg">
-    </span>
+    <div class='headimg-div'>
+      <a class='headimg-a' href="/2023/05/05/Anaconda%E9%85%8D%E7%BD%AEPyTorch%E7%8E%AF%E5%A2%83/">
+        <img itemprop="image" class='headimg' alt="Anaconda配置PyTorch环境" src='https://gcore.jsdelivr.net/gh/jxclbx/blogImages/imagePost/1683302845054.png'/>
+      </a>
+    </div>
   
   
     
@@ -2639,9 +2643,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        在Anaconda下安装Pytorch安装pytorch，有两种办法，一是pip，二是conda。不管什么样的方法，首先，都要安装最新的anaconda。
-安装AnacondaAnaconda指的是一个开源的Python发行版本，其包含了conda、Python等180多个科学包及其依赖项。里面所包含的Jupyter Notebook是数据挖掘领域中最热门的工具。(例如Kaggle网站)
-没...
+         在Anaconda下安装Pytorch
+安装pytorch，有两种办法，一是pip，二是conda。不管什么样的方法，首先，都要安装最新的anaconda。
+ 安装Anaconda
+Anaconda指的是一个开源的Python发行版本，其包含了conda、Python等180多个科学包及其依赖项。里面所包含的Jupyter Notebook是数据挖掘领域中最热门的工具。(例如Kaggle网...
       
     
   </div>
@@ -2713,7 +2718,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         在使用 python anaconda时，经常会用到很多常用操作，记录下来，方便以后更好地使用：
-CondaConda既是一个包管理器又是一个环境管理器。你肯定知道包管理器，它可以帮你发现和查看包。但是如果当我们想要安装一个包，但是这个包只支持跟我们目前使用的python不同的版本时。你只需要几行命令，就可以搭建起一个可以运行另外python版本的环境。这就是conda环境管理器的强大功能。...
+ Conda
+Conda既是一个包管理器又是一个环境管理器。你肯定知道包管理器，它可以帮你发现和查看包。但是如果当我们想要安装一个包，但是这个包只支持跟我们目前使用的python不同的版本时。你只需要几行命令，就可以搭建起一个可以运行另外python版本的环境。这就是conda环境管理器的强大功...
       
     
   </div>
@@ -2769,9 +2775,11 @@ CondaConda既是一个包管理器又是一个环境管理器。你肯定知道�
   
   
   
-    <span hidden>
-      <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg">
-    </span>
+    <div class='headimg-div'>
+      <a class='headimg-a' href="/2023/04/26/VS-Code%E9%85%8D%E7%BD%AEPython%E8%A7%A3%E9%87%8A%E5%99%A8/">
+        <img itemprop="image" class='headimg' alt="VS_Code配置Python解释器" src='https://gcore.jsdelivr.net/gh/jxclbx/blogImages/imagePost/1682516032742.png'/>
+      </a>
+    </div>
   
   
     
@@ -2785,8 +2793,9 @@ CondaConda既是一个包管理器又是一个环境管理器。你肯定知道�
     
       
         我们熟悉的老朋友VS Code今天cv2莫名其妙报错，经过一番排查，得到是Python自身出了问题，故记录一下VSC与anaconda配置其的过程
-VSCode首先，我们需要在环境变量中添加
-12C:\Users\13001\AppData\Local\Programs\Python\Python37C:\Users\13001\AppData\Local\Programs\Python\P...
+ VSCode
+首先，我们需要在环境变量中添加
+12C:\Users\13001\AppData\Local\Programs\Python\Python37C:\Users\13001\AppData\Local\Programs\Python...
       
     
   </div>

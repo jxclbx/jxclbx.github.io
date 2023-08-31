@@ -40,11 +40,11 @@
 <meta property="og:title" content="公开前：配置主题">
 <meta property="og:url" content="http://jxclbx.github.io/2023/04/23/%E5%85%AC%E5%BC%80%E5%89%8D%EF%BC%9A%E9%85%8D%E7%BD%AE%E4%B8%BB%E9%A2%98/index.html">
 <meta property="og:site_name" content="jxclbx的小站">
-<meta property="og:description" content="首先，非常激动，非常开心，我打开了撰写blog的大门。 配置主题首先是更改主题 1npm i hexo-theme-volantis  这步是为了将主题安置到 blog\node_modules\hexo-theme-volantis  关于背景图片的替换将图片放置在 node_modules\hexo-theme-volantis\source\images 中，再将 12345678cover">
+<meta property="og:description" content="首先，非常激动，非常开心，我打开了撰写blog的大门。  配置主题 首先是更改主题 1npm i hexo-theme-volantis 这步是为了将主题安置到 blog\node_modules\hexo-theme-volantis   关于背景图片的替换 将图片放置在 node_modules\hexo-theme-volantis\source\images 中，再将 12345678co">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg">
 <meta property="article:published_time" content="2023-04-23T15:35:32.000Z">
-<meta property="article:modified_time" content="2023-05-03T03:35:48.000Z">
+<meta property="article:modified_time" content="2023-08-31T04:15:25.538Z">
 <meta property="article:author" content="Jxclbx">
 <meta property="article:tag" content="自言自语">
 <meta name="twitter:card" content="summary">
@@ -1744,7 +1744,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1693450826287),
+    lastupdate: new Date(1693455629548),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2527,9 +2527,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   
-    <span hidden>
-      <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg">
-    </span>
+    <div class='headimg-div'>
+      <a class='headimg-a'>
+        <img itemprop="image" class='headimg' src='https://gcore.jsdelivr.net/gh/jxclbx/blogImages/imagePost/1682270014361.png'/>
+      </a>
+    </div>
   
   <div class="article-meta" id="top">
     
@@ -2594,20 +2596,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <p>首先，非常激动，非常开心，我打开了撰写blog的大门。</p>
-<h2 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h2><p>首先是更改主题</p>
+<h2 id="配置主题"><a class="markdownIt-Anchor" href="#配置主题"></a> 配置主题</h2>
+<p>首先是更改主题</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-theme-volantis</span><br></pre></td></tr></table></figure>
-
 <p>这步是为了将主题安置到 <code>blog\node_modules\hexo-theme-volantis</code></p>
 <p><img src="https://gcore.jsdelivr.net/gh/jxclbx/blogImages/imagePost/1682270014361.png" class="lazyload placeholder" data-srcset="https://gcore.jsdelivr.net/gh/jxclbx/blogImages/imagePost/1682270014361.png" srcset="https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@3/img/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" alt="1682270014361"></p>
-<h2 id="关于背景图片的替换"><a href="#关于背景图片的替换" class="headerlink" title="关于背景图片的替换"></a>关于背景图片的替换</h2><p>将图片放置在 <code>node_modules\hexo-theme-volantis\source\images</code> 中，再将</p>
+<h2 id="关于背景图片的替换"><a class="markdownIt-Anchor" href="#关于背景图片的替换"></a> 关于背景图片的替换</h2>
+<p>将图片放置在 <code>node_modules\hexo-theme-volantis\source\images</code> 中，再将</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cover<span class="punctuation">:</span></span><br><span class="line">  height_scheme<span class="punctuation">:</span> full # full<span class="punctuation">,</span> half</span><br><span class="line">  layout_scheme<span class="punctuation">:</span> dock # blank (留白)<span class="punctuation">,</span> search (搜索)<span class="punctuation">,</span> dock (坞)<span class="punctuation">,</span> featured (精选)<span class="punctuation">,</span> focus (焦点)</span><br><span class="line">  display<span class="punctuation">:</span></span><br><span class="line">    home<span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">    archive<span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">    others<span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span> # can be written in front-matter &#x27;cover<span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span>&#x27;</span><br><span class="line">  background<span class="punctuation">:</span> /images/bg.jpg # background image</span><br></pre></td></tr></table></figure>
-
 <p>的background字段更改为相对路径即可</p>
 <hr>
-<h2 id="关于引用图片"><a href="#关于引用图片" class="headerlink" title="关于引用图片"></a>关于引用图片</h2><p><code>hexo-renderer-marked 3.1.0</code> 引入了一个新的选项，其允许你无需使用 <code>asset_img</code> 标签插件就可以在 <code>markdown</code> 中嵌入图片</p>
+<h2 id="关于引用图片"><a class="markdownIt-Anchor" href="#关于引用图片"></a> 关于引用图片</h2>
+<p><code>hexo-renderer-marked 3.1.0</code> 引入了一个新的选项，其允许你无需使用 <code>asset_img</code> 标签插件就可以在 <code>markdown</code> 中嵌入图片</p>
 <p>然后再在 <code>_config.yml</code>中更改代码块</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder<span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">marked<span class="punctuation">:</span></span><br><span class="line">  prependRoot<span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">  postAsset<span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br></pre></td></tr></table></figure>
-
 <p>后在 <code>_posts</code> 文件夹中新建与post名相同的文件夹即可</p>
 <p><img src="https://gcore.jsdelivr.net/gh/jxclbx/blogImages/imagePost/1682271784641.png" class="lazyload placeholder" data-srcset="https://gcore.jsdelivr.net/gh/jxclbx/blogImages/imagePost/1682271784641.png" srcset="https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@3/img/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" alt="1682271784641"></p>
 
@@ -2634,10 +2636,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-05-03T11:35:48+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-08-31T12:15:25+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：May 3, 2023</p>
+    <p>更新于：Aug 31, 2023</p>
   </a>
 </div>
 
@@ -2720,8 +2722,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <a class='prev' href='/2023/04/26/VS-Code%E9%85%8D%E7%BD%AEPython%E8%A7%A3%E9%87%8A%E5%99%A8/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>VS_Code配置Python解释器</p>
           <p class='content'>我们熟悉的老朋友VS Code今天cv2莫名其妙报错，经过一番排查，得到是Python自身出了问题，故记录一下VSC与anaconda配置其的过程
-VSCode首先，我们需要在环境变量中添加
-1...</p>
+ VSCode
+首先，我们需要在环境变量中添加...</p>
         </a>
       
       
@@ -2789,7 +2791,7 @@ VSCode首先，我们需要在环境变量中添加
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E4%B8%BB%E9%A2%98"><span class="toc-text">配置主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E7%9A%84%E6%9B%BF%E6%8D%A2"><span class="toc-text">关于背景图片的替换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%BC%95%E7%94%A8%E5%9B%BE%E7%89%87"><span class="toc-text">关于引用图片</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E4%B8%BB%E9%A2%98"><span class="toc-text"> 配置主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E7%9A%84%E6%9B%BF%E6%8D%A2"><span class="toc-text"> 关于背景图片的替换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%BC%95%E7%94%A8%E5%9B%BE%E7%89%87"><span class="toc-text"> 关于引用图片</span></a></li></ol>
     </div>
   </section>
 
@@ -3359,7 +3361,7 @@ VSCode首先，我们需要在环境变量中添加
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"jxclbx的小站","url":"http://jxclbx.github.io/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Jxclbx","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg"},"url":"http://jxclbx.github.io/","sameAs":["https://github.com/volantis-x"],"description":"诶嘿"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jxclbx.github.io/","name":"jxclbx的小站"}},{"@type":"ListItem","position":2,"item":{"@id":"http://jxclbx.github.io/categories/技术/","name":"技术"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jxclbx.github.io/2023/04/23/公开前：配置主题/","name":"公开前：配置主题"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"jxclbx的小站","url":"http://jxclbx.github.io/","keywords":null,"description":"诶嘿","author":{"@type":"Person","name":"Jxclbx","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg"},"url":"http://jxclbx.github.io/","description":"诶嘿"},"publisher":{"@type":"Organization","name":"jxclbx的小站","url":"http://jxclbx.github.io/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://jxclbx.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"公开前：配置主题","description":"诶嘿","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://jxclbx.github.io/2023/04/23/%E5%85%AC%E5%BC%80%E5%89%8D%EF%BC%9A%E9%85%8D%E7%BD%AE%E4%B8%BB%E9%A2%98/"},"author":{"@type":"Person","name":"Jxclbx","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg"},"url":"http://jxclbx.github.io/"},"publisher":{"@type":"Organization","name":"jxclbx的小站","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg","width":192,"height":192}},"url":"http://jxclbx.github.io/2023/04/23/%E5%85%AC%E5%BC%80%E5%89%8D%EF%BC%9A%E9%85%8D%E7%BD%AE%E4%B8%BB%E9%A2%98/","wordCount":0,"datePublished":"2023-04-23T15:35:32.000Z","dateModified":"2023-05-03T03:35:48.000Z","articleSection":"技术","keywords":"自言自语","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"jxclbx的小站","url":"http://jxclbx.github.io/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Jxclbx","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg"},"url":"http://jxclbx.github.io/","sameAs":["https://github.com/volantis-x"],"description":"诶嘿"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jxclbx.github.io/","name":"jxclbx的小站"}},{"@type":"ListItem","position":2,"item":{"@id":"http://jxclbx.github.io/categories/技术/","name":"技术"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jxclbx.github.io/2023/04/23/公开前：配置主题/","name":"公开前：配置主题"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"jxclbx的小站","url":"http://jxclbx.github.io/","keywords":null,"description":"诶嘿","author":{"@type":"Person","name":"Jxclbx","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg"},"url":"http://jxclbx.github.io/","description":"诶嘿"},"publisher":{"@type":"Organization","name":"jxclbx的小站","url":"http://jxclbx.github.io/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://jxclbx.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"公开前：配置主题","description":"诶嘿","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://jxclbx.github.io/2023/04/23/%E5%85%AC%E5%BC%80%E5%89%8D%EF%BC%9A%E9%85%8D%E7%BD%AE%E4%B8%BB%E9%A2%98/"},"author":{"@type":"Person","name":"Jxclbx","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg"},"url":"http://jxclbx.github.io/"},"publisher":{"@type":"Organization","name":"jxclbx的小站","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg","width":192,"height":192}},"url":"http://jxclbx.github.io/2023/04/23/%E5%85%AC%E5%BC%80%E5%89%8D%EF%BC%9A%E9%85%8D%E7%BD%AE%E4%B8%BB%E9%A2%98/","wordCount":0,"datePublished":"2023-04-23T15:35:32.000Z","dateModified":"2023-08-31T04:15:25.538Z","articleSection":"技术","keywords":"自言自语","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages/imagePost/1682270014361.png","width":1024,"height":768}}]</script>
 
 
 

@@ -1741,7 +1741,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1693450826287),
+    lastupdate: new Date(1693455629548),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2539,9 +2539,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
   
-    <span hidden>
-      <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg">
-    </span>
+    <div class='headimg-div'>
+      <a class='headimg-a' href="/2023/05/02/%E5%88%9B%E5%BB%BAGitHub%E4%BB%93%E5%BA%93%E5%B9%B6%E4%B8%8E%E6%9C%AC%E5%9C%B0Git%E7%BB%91%E5%AE%9A/">
+        <img itemprop="image" class='headimg' alt="创建GitHub仓库并与本地Git绑定" src='https://gcore.jsdelivr.net/gh/jxclbx/blogImages/imagePost/1683035272657.png'/>
+      </a>
+    </div>
   
   
     
@@ -2561,12 +2563,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 掌握基本的Git操作
 
 这三步是缺一不可的，现在先来将SSH绑定git
-创建一个新的仓库我们点击“New repository”创建一个新的仓库：
+ 创建一个新的仓库
+我们点击“New repository”创建一个新的仓库：
 
 得到SSH地址
 
-绑定SSH双击git-bash.exe，在本地创建ssh key：
-1ssh-keygen -t rsa -C &quot;your_email@yourem...
+ 绑定SSH
+双击git-bash.exe，在本地创建ssh key：
+1ssh-keygen -t rsa -C &quot;your_email@yo...
       
     
   </div>

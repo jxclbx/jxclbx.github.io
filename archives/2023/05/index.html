@@ -1741,7 +1741,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1693450826287),
+    lastupdate: new Date(1693455629548),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2570,8 +2570,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        DatasetPyTorch中的Dataset类是一个抽象基类，用于表示数据集。它定义了两个必须实现的方法：__len__() 和 __getitem__()。这个基类是通用的，但它本身无法处理特定类型的数据。因此，当您需要处理特定类型的数据（例如图像、文本等）时，您需要创建一个继承自Dataset类的自定义类，并实现这两个方法，以便根据您的数据加载和处理需求来处理数据。
-在您提供的代码示例...
+         Dataset
+PyTorch中的Dataset类是一个抽象基类，用于表示数据集。它定义了两个必须实现的方法：__len__() 和 __getitem__()。这个基类是通用的，但它本身无法处理特定类型的数据。因此，当您需要处理特定类型的数据（例如图像、文本等）时，您需要创建一个继承自Dataset类的自定义类，并实现这两个方法，以便根据您的数据加载和处理需求来处理数据。
+在您提供的代码...
       
     
   </div>
@@ -2627,9 +2628,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
   
-    <span hidden>
-      <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg">
-    </span>
+    <div class='headimg-div'>
+      <a class='headimg-a' href="/2023/05/09/%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%B6%E4%BD%9C%E4%BD%9C%E4%B8%9A2/">
+        <img itemprop="image" class='headimg' alt="网页设计与制作作业2" src='https://gcore.jsdelivr.net/gh/jxclbx/blogImages/imagePost/1683615660949.png'/>
+      </a>
+    </div>
   
   
     
@@ -2642,10 +2645,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        阐述 CSS 盒模型原理CSS盒模型是CSS中最基础的概念之一，它描述了一个元素在网页中的呈现方式。盒模型将一个元素看做是一个矩形盒子，由四个部分组成：内容区域（content）、内边距区域（padding）、边框区域（border）和外边距区域（margin）。
+         阐述 CSS 盒模型原理
+CSS盒模型是CSS中最基础的概念之一，它描述了一个元素在网页中的呈现方式。盒模型将一个元素看做是一个矩形盒子，由四个部分组成：内容区域（content）、内边距区域（padding）、边框区域（border）和外边距区域（margin）。
 
 内容区域，也就是元素内部实际显示内容的区域。比如div元素，它的内容区域就是它所包含的文字、图片、列表等内容。
-内边距区域，它...
+内边距区域...
       
     
   </div>
@@ -2701,9 +2705,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
   
-    <span hidden>
-      <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg">
-    </span>
+    <div class='headimg-div'>
+      <a class='headimg-a' href="/2023/05/09/%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8VSCode%E7%BC%96%E5%86%99HTML%E6%96%87%E4%BB%B6/">
+        <img itemprop="image" class='headimg' alt="快速使用VSCode编写HTML文件" src='https://gcore.jsdelivr.net/gh/jxclbx/blogImages/imagePost/1683610714894.png'/>
+      </a>
+    </div>
   
   
     
@@ -2716,7 +2722,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        安装安装相关插件——搜索html,安装如下插件
+         安装
+安装相关插件——搜索html,安装如下插件
 
 再次打开插件商店，搜索open in browser
 
@@ -2792,10 +2799,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        Hexo自定义原理Hexo 系列的博客中的文章都是经Hexo的主题渲染的静态网页。所以Hexo博客大部分都呈现出一种高度的统一化与规范化。不过 Hexo 提供了跳过渲染功能，使得我们可以直接在博客中放入自定义网页。
+         Hexo自定义原理
+Hexo 系列的博客中的文章都是经Hexo的主题渲染的静态网页。所以Hexo博客大部分都呈现出一种高度的统一化与规范化。不过 Hexo 提供了跳过渲染功能，使得我们可以直接在博客中放入自定义网页。
 比如在博客中放入图片、自定义404.html、自定义About页面、简历等
-创建自定义网页网页可以是自己编写的，也可以是别人现成的源码（下载喜欢的页面）。
-网页编写完成后，在He...
+ 创建自定义网页
+网页可以是自己编写的，也可以是别人现成的源码（下载喜欢的页面）。
+网页编写完成后...
       
     
   </div>
@@ -2851,9 +2860,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
   
-    <span hidden>
-      <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg">
-    </span>
+    <div class='headimg-div'>
+      <a class='headimg-a' href="/2023/05/06/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E5%AE%9E%E9%AA%8C%E9%A2%98%E7%9B%AE/">
+        <img itemprop="image" class='headimg' alt="算法设计实验题目" src='https://gcore.jsdelivr.net/gh/jxclbx/blogImages/imagePost/1683362860098.png'/>
+      </a>
+    </div>
   
   
     
@@ -2934,9 +2945,11 @@ BFS DFS树的层序遍历（3月29日）
   
   
   
-    <span hidden>
-      <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg">
-    </span>
+    <div class='headimg-div'>
+      <a class='headimg-a' href="/2023/05/05/Anaconda%E9%85%8D%E7%BD%AEPyTorch%E7%8E%AF%E5%A2%83/">
+        <img itemprop="image" class='headimg' alt="Anaconda配置PyTorch环境" src='https://gcore.jsdelivr.net/gh/jxclbx/blogImages/imagePost/1683302845054.png'/>
+      </a>
+    </div>
   
   
     
@@ -2949,9 +2962,10 @@ BFS DFS树的层序遍历（3月29日）
   <div class='md article-desc' itemprop="articleBody">
     
       
-        在Anaconda下安装Pytorch安装pytorch，有两种办法，一是pip，二是conda。不管什么样的方法，首先，都要安装最新的anaconda。
-安装AnacondaAnaconda指的是一个开源的Python发行版本，其包含了conda、Python等180多个科学包及其依赖项。里面所包含的Jupyter Notebook是数据挖掘领域中最热门的工具。(例如Kaggle网站)
-没...
+         在Anaconda下安装Pytorch
+安装pytorch，有两种办法，一是pip，二是conda。不管什么样的方法，首先，都要安装最新的anaconda。
+ 安装Anaconda
+Anaconda指的是一个开源的Python发行版本，其包含了conda、Python等180多个科学包及其依赖项。里面所包含的Jupyter Notebook是数据挖掘领域中最热门的工具。(例如Kaggle网...
       
     
   </div>
@@ -3023,7 +3037,8 @@ BFS DFS树的层序遍历（3月29日）
     
       
         在使用 python anaconda时，经常会用到很多常用操作，记录下来，方便以后更好地使用：
-CondaConda既是一个包管理器又是一个环境管理器。你肯定知道包管理器，它可以帮你发现和查看包。但是如果当我们想要安装一个包，但是这个包只支持跟我们目前使用的python不同的版本时。你只需要几行命令，就可以搭建起一个可以运行另外python版本的环境。这就是conda环境管理器的强大功能。...
+ Conda
+Conda既是一个包管理器又是一个环境管理器。你肯定知道包管理器，它可以帮你发现和查看包。但是如果当我们想要安装一个包，但是这个包只支持跟我们目前使用的python不同的版本时。你只需要几行命令，就可以搭建起一个可以运行另外python版本的环境。这就是conda环境管理器的强大功...
       
     
   </div>
@@ -3094,8 +3109,9 @@ CondaConda既是一个包管理器又是一个环境管理器。你肯定知道�
   <div class='md article-desc' itemprop="articleBody">
     
       
-        站内搜索配置代码
-1234567891011121314# To use hexo search, you need to install the following plugins:# npm i hexo-generator-json-contentsearch:  enable: true  service: hexo  # hexo, algolia, meilisearch  al...
+         站内搜索
+配置代码
+1234567891011121314# To use hexo search, you need to install the following plugins:# npm i hexo-generator-json-contentsearch:  enable: true  service: hexo  # hexo, algolia, meilisearch  ...
       
     
   </div>
@@ -3151,9 +3167,11 @@ CondaConda既是一个包管理器又是一个环境管理器。你肯定知道�
   
   
   
-    <span hidden>
-      <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg">
-    </span>
+    <div class='headimg-div'>
+      <a class='headimg-a' href="/2023/05/03/Github-jsDelivr%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%9B%BE%E5%BA%8A/">
+        <img itemprop="image" class='headimg' alt="Github+jsDelivr搭建个人图床" src='https://gcore.jsdelivr.net/gh/jxclbx/blogImages/imagePost/1683047388149.png'/>
+      </a>
+    </div>
   
   
     
@@ -3166,12 +3184,12 @@ CondaConda既是一个包管理器又是一个环境管理器。你肯定知道�
   <div class='md article-desc' itemprop="articleBody">
     
       
-        Github+jsDelivr图床经常写博文的朋友对床图肯定不陌生。使用markdown撰写博客，将图片放在床图网站生成外链统一管理，这样一份博文就可以发布在不同的平台，也避免了不同网页对同一张图片引用的。不过免费的床图网站有时不稳定，付费价格又都不便宜。
+         Github+jsDelivr图床
+经常写博文的朋友对床图肯定不陌生。使用markdown撰写博客，将图片放在床图网站生成外链统一管理，这样一份博文就可以发布在不同的平台，也避免了不同网页对同一张图片引用的。不过免费的床图网站有时不稳定，付费价格又都不便宜。
 最近了解到了Github+jsDelivr的方式搭建个人床图，稳定快速免费。
 搭建方法也比较简单，本文默认已经：
 
-有Github账号
-...
+有Github账...
       
     
   </div>
@@ -3227,9 +3245,11 @@ CondaConda既是一个包管理器又是一个环境管理器。你肯定知道�
   
   
   
-    <span hidden>
-      <meta itemprop="image" content="https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg">
-    </span>
+    <div class='headimg-div'>
+      <a class='headimg-a' href="/2023/05/02/%E5%88%9B%E5%BB%BAGitHub%E4%BB%93%E5%BA%93%E5%B9%B6%E4%B8%8E%E6%9C%AC%E5%9C%B0Git%E7%BB%91%E5%AE%9A/">
+        <img itemprop="image" class='headimg' alt="创建GitHub仓库并与本地Git绑定" src='https://gcore.jsdelivr.net/gh/jxclbx/blogImages/imagePost/1683035272657.png'/>
+      </a>
+    </div>
   
   
     
@@ -3249,12 +3269,14 @@ CondaConda既是一个包管理器又是一个环境管理器。你肯定知道�
 掌握基本的Git操作
 
 这三步是缺一不可的，现在先来将SSH绑定git
-创建一个新的仓库我们点击“New repository”创建一个新的仓库：
+ 创建一个新的仓库
+我们点击“New repository”创建一个新的仓库：
 
 得到SSH地址
 
-绑定SSH双击git-bash.exe，在本地创建ssh key：
-1ssh-keygen -t rsa -C &quot;your_email@yourem...
+ 绑定SSH
+双击git-bash.exe，在本地创建ssh key：
+1ssh-keygen -t rsa -C &quot;your_email@yo...
       
     
   </div>
