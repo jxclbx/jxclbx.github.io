@@ -40,11 +40,11 @@
 <meta property="og:title" content="20230831">
 <meta property="og:url" content="http://jxclbx.github.io/2023/08/31/20230831/index.html">
 <meta property="og:site_name" content="jxclbx的小站">
-<meta property="og:description" content="痛 摔跤的疼痛肯定是无法这么快就缓解的……尤其是不破皮不流血  Written with StackEdit中文版.">
+<meta property="og:description" content="痛 摔跤的疼痛肯定是无法这么快就缓解的……尤其是不破皮不流血  今日维护脚本 来po一些觉得很有意思的聊天记录be like “原来”“我是按照一天一更新图片”“写的”“然后现在我突然想起来”“我有时候可能回不了学校”“就想着用一个dataframe存日期，来把每个日期产生的文件写进去，已经写入过的日期置1” “昂” “然后他妈的”“我发现dataframe要写的代码太多了”“然后我就想”“要不">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg">
 <meta property="article:published_time" content="2023-08-31T03:00:15.000Z">
-<meta property="article:modified_time" content="2023-08-31T03:00:24.579Z">
+<meta property="article:modified_time" content="2023-08-31T12:40:45.351Z">
 <meta property="article:author" content="Jxclbx">
 <meta property="article:tag" content="日记">
 <meta name="twitter:card" content="summary">
@@ -1744,7 +1744,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1693476922373),
+    lastupdate: new Date(1693485647244),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2595,12 +2595,51 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="post-body" itemprop="articleBody">
     <h2 id="痛"><a class="markdownIt-Anchor" href="#痛"></a> 痛</h2>
 <p>摔跤的疼痛肯定是无法这么快就缓解的……尤其是不破皮不流血</p>
-<blockquote>
-<p>Written with <a target="_blank" rel="noopener" href="https://stackedit.cn/">StackEdit中文版</a>.</p>
-</blockquote>
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjgyMTU3MzVdfQ==
--->
+<h2 id="今日维护脚本"><a class="markdownIt-Anchor" href="#今日维护脚本"></a> 今日维护脚本</h2>
+<p>来po一些觉得很有意思的聊天记录be like</p>
+<p>“原来”“我是按照一天一更新图片”“写的”“然后现在我突然想起来”“我有时候可能回不了学校”“就想着用一个dataframe存日期，来把每个日期产生的文件写进去，已经写入过的日期置1”</p>
+<p>“昂”</p>
+<p>“然后他妈的”“我发现dataframe要写的代码太多了”“然后我就想”“要不要直接就把所有遍历到的文件全扔进去吧”“虽然慢但是可行”“然后读了读昨天写的代码，全他妈要重构”</p>
+<p>“现在我想出了个折中的方法”“在接口外边迭代日期”“从2022年1月1号执行到今天”</p>
+<p><strong>屎山就这么起来了</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> current_date &lt;= end_date:</span><br><span class="line">    gp.git_pics_by_date(current_date.strftime(<span class="string">&#x27;%Y-%m-%d&#x27;</span>), posts_path, img_dest_folder, img_repo_path)</span><br><span class="line">    current_date += datetime.timedelta(days=<span class="number">1</span>)</span><br><span class="line">    <span class="built_in">print</span>(current_date)</span><br></pre></td></tr></table></figure>
+<h2 id="人机界面交互方向是什么"><a class="markdownIt-Anchor" href="#人机界面交互方向是什么"></a> 人机界面交互方向是什么</h2>
+<h3 id="个性化和推荐系统"><a class="markdownIt-Anchor" href="#个性化和推荐系统"></a> 个性化和推荐系统</h3>
+<ol>
+<li><strong>用户建模</strong> : 通过机器学习算法，可以更准确地理解用户的需求和行为，从而提供更个性化的服务或产品。</li>
+<li><strong>内容推荐</strong> : 在各种应用（如新闻、电商、社交媒体等）中，机器学习算法可以用于推荐最相关或最有趣的内容给用户。</li>
+</ol>
+<h3 id="自然语言处理和语音交互"><a class="markdownIt-Anchor" href="#自然语言处理和语音交互"></a> 自然语言处理和语音交互</h3>
+<ol>
+<li><strong>聊天机器人</strong> : 机器学习和自然语言处理（NLP）技术可以用于创建更自然、更智能的聊天机器人。</li>
+<li><strong>语音助手</strong> : 通过机器学习，可以提高语音识别和自然语言理解的准确性，从而改善用户与语音助手的交互体验。</li>
+</ol>
+<h3 id="智能界面和自适应系统"><a class="markdownIt-Anchor" href="#智能界面和自适应系统"></a> 智能界面和自适应系统</h3>
+<ol>
+<li><strong>预测性输入和自动完成</strong> : 机器学习算法可以用于预测用户可能的下一步操作，从而提供更快捷的界面响应。</li>
+<li><strong>自适应界面</strong> : 通过学习用户的行为和偏好，界面可以自动调整以适应不同用户的需求。</li>
+</ol>
+<h3 id="增强现实和虚拟现实"><a class="markdownIt-Anchor" href="#增强现实和虚拟现实"></a> 增强现实和虚拟现实</h3>
+<ol>
+<li><strong>手势识别</strong> : 通过机器学习算法，可以更准确地识别用户的手势，从而提供更自然的交互方式。</li>
+<li><strong>场景理解</strong> : 在增强现实（AR）应用中，机器学习可以用于理解和解释现实世界的场景，以便更准确地叠加虚拟对象。</li>
+</ol>
+<h3 id="用户研究和数据分析"><a class="markdownIt-Anchor" href="#用户研究和数据分析"></a> 用户研究和数据分析</h3>
+<ol>
+<li><strong>情感分析</strong> : 通过分析用户的文本或语音输入，可以了解用户的情感状态，从而提供更符合情境的响应。</li>
+<li><strong>用户行为分析</strong> : 机器学习算法可以用于分析大量的用户交互数据，以发现使用模式、痛点或者其他有用的信息。</li>
+</ol>
+<h3 id="辅助技术"><a class="markdownIt-Anchor" href="#辅助技术"></a> 辅助技术</h3>
+<ol>
+<li><strong>无障碍设计</strong> : 机器学习可以用于提高无障碍技术的准确性和可用性，例如通过视觉识别来辅助视障人士。</li>
+</ol>
+<p>由于你有机器学习和算法的背景，你将能够在HCI领域中应用这些高级技术来解决复杂问题，提供更高质量的用户体验。同时，你也可以从用户研究和设计思维中获得全面的视角，这将使你在解决实际问题时更加全面和深入。</p>
+<h2 id="可爱捏"><a class="markdownIt-Anchor" href="#可爱捏"></a> 可爱捏</h2>
+<p>还是想专门开topic记录一下打印照片这可爱的介质，真的赋予了照片生命以及长久保存的意义……</p>
+<p><img src="https://gcore.jsdelivr.net/gh/jxclbx/blogImages/imagePost/1693485580960.png" class="lazyload placeholder" data-srcset="https://gcore.jsdelivr.net/gh/jxclbx/blogImages/imagePost/1693485580960.png" srcset="https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@3/img/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" alt="1693485580960"></p>
+<h2 id="研究所项目"><a class="markdownIt-Anchor" href="#研究所项目"></a> 研究所项目</h2>
+<p>现在是20：40分，我要去验证舌苔项目的可行性了</p>
+
   </div>
   
   
@@ -2624,7 +2663,7 @@ eyJoaXN0b3J5IjpbLTEzMjgyMTU3MzVdfQ==
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-08-31T11:00:24+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-08-31T20:40:45+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Aug 31, 2023</p>
@@ -2778,7 +2817,7 @@ eyJoaXN0b3J5IjpbLTEzMjgyMTU3MzVdfQ==
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%97%9B"><span class="toc-text"> 痛</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%97%9B"><span class="toc-text"> 痛</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8A%E6%97%A5%E7%BB%B4%E6%8A%A4%E8%84%9A%E6%9C%AC"><span class="toc-text"> 今日维护脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%BA%E6%9C%BA%E7%95%8C%E9%9D%A2%E4%BA%A4%E4%BA%92%E6%96%B9%E5%90%91%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text"> 人机界面交互方向是什么</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AA%E6%80%A7%E5%8C%96%E5%92%8C%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F"><span class="toc-text"> 个性化和推荐系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%92%8C%E8%AF%AD%E9%9F%B3%E4%BA%A4%E4%BA%92"><span class="toc-text"> 自然语言处理和语音交互</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%99%BA%E8%83%BD%E7%95%8C%E9%9D%A2%E5%92%8C%E8%87%AA%E9%80%82%E5%BA%94%E7%B3%BB%E7%BB%9F"><span class="toc-text"> 智能界面和自适应系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A2%9E%E5%BC%BA%E7%8E%B0%E5%AE%9E%E5%92%8C%E8%99%9A%E6%8B%9F%E7%8E%B0%E5%AE%9E"><span class="toc-text"> 增强现实和虚拟现实</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%A0%94%E7%A9%B6%E5%92%8C%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="toc-text"> 用户研究和数据分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%85%E5%8A%A9%E6%8A%80%E6%9C%AF"><span class="toc-text"> 辅助技术</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E7%88%B1%E6%8D%8F"><span class="toc-text"> 可爱捏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E6%89%80%E9%A1%B9%E7%9B%AE"><span class="toc-text"> 研究所项目</span></a></li></ol>
     </div>
   </section>
 
@@ -3348,7 +3387,7 @@ eyJoaXN0b3J5IjpbLTEzMjgyMTU3MzVdfQ==
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"jxclbx的小站","url":"http://jxclbx.github.io/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Jxclbx","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg"},"url":"http://jxclbx.github.io/","sameAs":["https://github.com/volantis-x"],"description":"诶嘿"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jxclbx.github.io/","name":"jxclbx的小站"}},{"@type":"ListItem","position":2,"item":{"@id":"http://jxclbx.github.io/categories/浮生/","name":"浮生"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jxclbx.github.io/2023/08/31/20230831/","name":"20230831"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"jxclbx的小站","url":"http://jxclbx.github.io/","keywords":null,"description":"诶嘿","author":{"@type":"Person","name":"Jxclbx","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg"},"url":"http://jxclbx.github.io/","description":"诶嘿"},"publisher":{"@type":"Organization","name":"jxclbx的小站","url":"http://jxclbx.github.io/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://jxclbx.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"20230831","description":"诶嘿","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://jxclbx.github.io/2023/08/31/20230831/"},"author":{"@type":"Person","name":"Jxclbx","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg"},"url":"http://jxclbx.github.io/"},"publisher":{"@type":"Organization","name":"jxclbx的小站","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg","width":192,"height":192}},"url":"http://jxclbx.github.io/2023/08/31/20230831/","wordCount":0,"datePublished":"2023-08-31T03:00:15.000Z","dateModified":"2023-08-31T03:00:24.579Z","articleSection":"浮生","keywords":"日记","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"jxclbx的小站","url":"http://jxclbx.github.io/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Jxclbx","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg"},"url":"http://jxclbx.github.io/","sameAs":["https://github.com/volantis-x"],"description":"诶嘿"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jxclbx.github.io/","name":"jxclbx的小站"}},{"@type":"ListItem","position":2,"item":{"@id":"http://jxclbx.github.io/categories/浮生/","name":"浮生"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jxclbx.github.io/2023/08/31/20230831/","name":"20230831"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"jxclbx的小站","url":"http://jxclbx.github.io/","keywords":null,"description":"诶嘿","author":{"@type":"Person","name":"Jxclbx","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg"},"url":"http://jxclbx.github.io/","description":"诶嘿"},"publisher":{"@type":"Organization","name":"jxclbx的小站","url":"http://jxclbx.github.io/","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://jxclbx.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"20230831","description":"诶嘿","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://jxclbx.github.io/2023/08/31/20230831/"},"author":{"@type":"Person","name":"Jxclbx","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg"},"url":"http://jxclbx.github.io/"},"publisher":{"@type":"Organization","name":"jxclbx的小站","logo":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg","width":192,"height":192}},"url":"http://jxclbx.github.io/2023/08/31/20230831/","wordCount":0,"datePublished":"2023-08-31T03:00:15.000Z","dateModified":"2023-08-31T12:40:45.351Z","articleSection":"浮生","keywords":"日记","image":{"@type":"ImageObject","url":"https://gcore.jsdelivr.net/gh/jxclbx/blogImages@main/imageSource/icon.jpg","width":192,"height":192}}]</script>
 
 
 
