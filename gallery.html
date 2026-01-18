@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>照片库 - JETPHOTOS Style</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* 1. 统一背景色与基础文字 */
+        body { background-color: #ECECEC; color: #333; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        
+        /* 2. 统一标题样式 (带侧边粗线条) */
+        .section-title { 
+            font-size: 0.875rem; 
+            font-weight: 800; 
+            text-transform: uppercase; 
+            letter-spacing: 0.15em; 
+            border-left: 4px solid #282828; 
+            padding-left: 0.75rem;
+            color: #444;
+        }
+
+        /* 3. 页面容器微调 */
+        main { min-height: 80vh; }
+    </style>
+</head>
+<body class="pb-20">
+
+    <nav class="bg-[#282828] text-white shadow-md relative h-[52px]">
+
+        <div class="w-full h-full flex justify-between items-center px-10">
+            <a href="index.html" class="text-xl font-bold tracking-tighter italic hover:opacity-90 transition">
+                JET<span class="text-blue-500">PHOTOS</span>
+            </a>
+
+            <div class="flex items-center space-x-10">
+                <div class="space-x-8 text-xs uppercase tracking-widest font-bold hidden md:flex">
+                    <a href="index.html" class="text-white hover:text-blue-300 transition">Home</a>
+                    <a href="gallery.html" class="text-blue-400">Photos</a>
+                    <a href="stats.html" class="text-white hover:text-blue-300 transition">Stats</a>
+                </div>
+
+                <div class="relative flex items-center">
+                    <input type="text" id="nav-search-input" 
+                           placeholder="Search Reg..." 
+                           class="bg-white text-black text-[11px] px-3 py-1.5 w-32 md:w-44 rounded-sm focus:outline-none placeholder-gray-400 font-sans">
+                    <button onclick="performNavSearch()" class="absolute right-2 text-gray-400 hover:text-blue-500 transition">
+                        <i class="fa fa-search text-xs"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 mt-8">
+        
+        <div class="mb-8">
+            <h1 id="gallery-title" class="section-title tracking-wider">LOADING DATABASE...</h1>
+        </div>
+
+        <div id="pagination" class="flex justify-center items-center space-x-2 mb-10">
+            </div>
+
+        <div id="photo-grid" class="grid grid-cols-4 gap-4">
+            </div>
+
+        <div id="pagination-bottom" class="flex justify-center items-center space-x-2 mt-16">
+        </div>
+
+    </main>
+
+    <script src="config.js"></script>
+    <script src="gallery.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>照片详情 - JETPHOTOS Style</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* 1. 统一背景色与基础文字颜色 */
+        body { background-color: #ECECEC; color: #333; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        
+        /* 2. 信息标签样式：深灰色、小号、加粗大写 */
+        .info-label { color: #333; font-size: 0.8rem; text-transform: uppercase; font-weight: 700; margin-bottom: 2px; letter-spacing: 0.05em; }
+        
+        /* 3. 信息数值样式：深黑色、加粗 */
+        .info-value { color: #000; font-size: 1.3rem; font-weight: 600; }
+
+        /* 4. 图片容器：白底细边框，模拟冲印照片质感 */
+        .image-container { background: white; box-shadow: 0 1px 1px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="pb-20">
+
+    <nav class="bg-[#282828] text-white shadow-md relative h-[52px]">
+        
+        <div class="w-full h-full flex justify-between items-center px-10">
+            <a href="index.html" class="text-xl font-bold tracking-tighter italic hover:opacity-90 transition">
+                JET<span class="text-blue-500">PHOTOS</span>
+            </a>
+            
+            <div class="flex items-center space-x-10">
+                <div class="space-x-8 text-xs uppercase tracking-widest font-bold hidden md:flex">
+                    <a href="index.html" class="text-white hover:text-blue-300 transition">Home</a>
+                    <a href="gallery.html" class="text-white hover:text-blue-300 transition">Photos</a>
+                    <a href="stats.html" class="text-white hover:text-blue-300 transition">Stats</a>
+                </div>
+            
+                <div class="relative flex items-center">
+                    <input type="text" id="nav-search-input" 
+                           placeholder="Search Reg..." 
+                           class="bg-white text-black text-[11px] px-3 py-1.5 w-32 md:w-44 rounded-sm focus:outline-none placeholder-gray-400 font-sans">
+                    <button onclick="performNavSearch()" class="absolute right-2 text-gray-400 hover:text-blue-500 transition">
+                        <i class="fa fa-search text-xs"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 mt-8">
+        <div class="image-container">
+            <img id="big-photo" src="" class="w-full h-auto block" alt="Aviation Photo">
+        </div>
+
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-gray-300 pt-8">
+
+            <div class="space-y-6">
+                <div>
+                    <p class="info-label">Registration</p>
+                    <a id="link-reg" href="#" class="info-value text-2xl text-blue-600 hover:underline">-</a>
+                </div>
+                <div>
+                    <p class="info-label">Aircraft Type</p>
+                    <a id="link-model" href="#" class="info-value hover:text-blue-600 hover:underline transition-colors">-</a>
+                </div>
+                <div>
+                    <p class="info-label">Airline</p>
+                    <a id="link-airline" href="#" class="info-value hover:text-blue-600 hover:underline transition-colors">-</a>
+                </div>
+            </div>
+        
+            <div class="space-y-6">
+                <div>
+                    <p class="info-label">Photo Date</p>
+                    <a id="link-date" href="#" class="info-value hover:text-blue-600 hover:underline transition-colors">-</a>
+                </div>
+                <div>
+                    <p class="info-label">Location</p>
+                    <a id="link-airport" href="#" class="info-value hover:text-blue-600 hover:underline transition-colors">-</a>
+                </div>
+            </div>
+        
+            <div class="space-y-6 md:border-l md:border-gray-300 md:pl-12">
+                <div>
+                    <p class="info-label">Camera & Lens</p>
+                    <p id="info-camera" class="info-value text-base">-</p>
+                </div>
+                <div class="pt-4">
+                    <p class="info-label">Photographer</p>
+                    <p class="info-value text-gray-700">jxclbx</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="fullscreen-overlay" class="fixed inset-0 bg-black/90 z-50 hidden overflow-auto cursor-zoom-out backdrop-blur-sm transition-opacity duration-300">
+        <div class="flex min-h-full items-center justify-center p-8">
+            <img id="full-size-image" src="" class="block shadow-2xl ring-1 ring-white/10" style="max-width: none; width: auto;">
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="photo-detail.js"></script>
+</body>
+</html>
