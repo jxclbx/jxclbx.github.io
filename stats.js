@@ -24,26 +24,22 @@ async function initStatsPage() {
 
 // --- 核心同步逻辑 ---
 function syncGlobalYear(year) {
-    // 1. 同步两个下拉菜单的数值
     document.getElementById('monthly-year-select').value = year;
     document.getElementById('heatmap-year-select').value = year;
     
-    // 2. 重新渲染受年份影响的图表
     updateMonthlyChart(year);
     updateHeatmapChart(year);
 }
 
 function renderAllStatistics() {
-    // 基础资产分布
-    renderRankedChart('airline', 'chart-airline', 'table-airline');
-    renderRankedChart('model', 'chart-model', 'table-model');
-    renderRankedChart('airport', 'chart-airport', 'table-airport');
+    // 基础资产分布 (饼图 + 表格)
+    renderRankedChart('airline', 'chart-airline', 'table-airline', 'Most photographed airlines');
+    renderRankedChart('model', 'chart-model', 'table-model', 'Most photographed aircraft');
+    renderRankedChart('airport', 'chart-airport', 'table-airport', 'Most visited airports');
 
-    // 时间统计初始化
     const years = [...new Set(allData.map(item => item.date.split('-')[0]))].sort();
     const latestYear = years[years.length - 1];
 
-    // 初始化下拉菜单选项
     const populateYearSelect = (id) => {
         const select = document.getElementById(id);
         select.innerHTML = years.slice().reverse().map(y => `<option value="${y}">${y}</option>`).join('');
@@ -51,18 +47,14 @@ function renderAllStatistics() {
     populateYearSelect('monthly-year-select');
     populateYearSelect('heatmap-year-select');
 
-    // 绑定下拉菜单事件
     document.getElementById('monthly-year-select').onchange = (e) => syncGlobalYear(e.target.value);
     document.getElementById('heatmap-year-select').onchange = (e) => syncGlobalYear(e.target.value);
 
-    // 渲染年度柱状图
     renderYearlyChart(years);
-    
-    // 初始同步到最新一年
     syncGlobalYear(latestYear);
 }
 
-// --- 具体渲染函数 ---
+// --- 柱状图样式统一 (仿照截图样式) ---
 
 function renderYearlyChart(years) {
     const yearlyCounts = {};
@@ -76,17 +68,36 @@ function renderYearlyChart(years) {
     charts['chart-yearly'] = chart;
     
     chart.setOption({
-        tooltip: { trigger: 'axis' },
-        xAxis: { type: 'category', data: years, axisLine: { lineStyle: { color: '#ccc' } } },
-        yAxis: { type: 'value', splitLine: { lineStyle: { type: 'dashed' } } },
+        title: {
+            text: 'Photos uploaded per year',
+            left: 'center',
+            textStyle: { color: '#333', fontSize: 13, fontWeight: 'normal' }
+        },
+        tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+        grid: { top: '20%', bottom: '15%', containLabel: true },
+        xAxis: { 
+            type: 'category', 
+            data: years, 
+            axisLine: { lineStyle: { color: '#ddd' } },
+            axisLabel: { color: '#666', fontSize: 10 }
+        },
+        yAxis: { 
+            type: 'value', 
+            name: 'Photos uploaded',
+            nameLocation: 'middle',
+            nameGap: 35,
+            nameTextStyle: { color: '#999', fontSize: 10 },
+            splitLine: { lineStyle: { type: 'dashed', color: '#eee' } },
+            axisLabel: { color: '#666', fontSize: 10 }
+        },
         series: [{
-            data: values, type: 'bar', barWidth: '40%',
-            itemStyle: { color: '#282828' },
-            emphasis: { itemStyle: { color: '#3b82f6' } }
+            data: values, 
+            type: 'bar', 
+            barWidth: '40%',
+            itemStyle: { color: '#0054a6', borderRadius: [2, 2, 0, 0] }
         }]
     });
 
-    // 点击柱子同步全年
     chart.on('click', (params) => syncGlobalYear(params.name));
 }
 
@@ -100,17 +111,88 @@ function updateMonthlyChart(year) {
     const chart = echarts.init(document.getElementById('chart-monthly'));
     charts['chart-monthly'] = chart;
     chart.setOption({
-        tooltip: { trigger: 'axis', formatter: '{b}: {c} 张' },
+        title: {
+            text: `Monthly uploads in ${year}`,
+            left: 'center',
+            textStyle: { color: '#333', fontSize: 13, fontWeight: 'normal' }
+        },
+        tooltip: { trigger: 'axis', formatter: '{b}: {c} photos' },
+        grid: { top: '20%', bottom: '15%', containLabel: true },
         xAxis: { 
             type: 'category', 
             data: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
-            axisLabel: { fontSize: 10 }
+            axisLabel: { fontSize: 10, color: '#666' },
+            axisLine: { lineStyle: { color: '#ddd' } }
         },
-        yAxis: { type: 'value', splitLine: { lineStyle: { type: 'dashed' } } },
-        series: [{ data: monthlyCounts, type: 'bar', barWidth: '50%', itemStyle: { color: '#3b82f6' } }]
+        yAxis: { 
+            type: 'value',
+            splitLine: { lineStyle: { type: 'dashed', color: '#eee' } },
+            axisLabel: { color: '#666', fontSize: 10 }
+        },
+        series: [{ 
+            data: monthlyCounts, 
+            type: 'bar', 
+            barWidth: '50%', 
+            itemStyle: { color: '#0054a6', borderRadius: [2, 2, 0, 0] } 
+        }]
     });
 }
 
+// --- 饼图样式统一 (实心饼图 + 蓝色系渐变) ---
+
+function renderRankedChart(field, chartId, tableId, titleText) {
+    const counts = {};
+    allData.forEach(item => { if(item[field]) counts[item[field]] = (counts[item[field]] || 0) + 1; });
+    const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([name, value]) => ({ name, value }));
+    const total = allData.length;
+
+    // 渲染表格
+    const tbody = document.getElementById(tableId);
+    tbody.innerHTML = sorted.slice(0, 15).map((item, index) => `
+        <tr>
+            <td class="font-bold text-gray-400 w-8">${index + 1}</td>
+            <td class="font-bold">${item.name}</td>
+            <td class="text-right">${item.value}</td>
+            <td class="text-right text-blue-500 font-medium">${((item.value/total)*100).toFixed(1)}%</td>
+        </tr>
+    `).join('');
+
+    // 渲染图表
+    const chart = echarts.init(document.getElementById(chartId));
+    charts[chartId] = chart;
+    
+    // 取前5名，其余合并为 Other
+    let chartData = sorted.slice(0, 5);
+    const otherVal = sorted.slice(5).reduce((sum, curr) => sum + curr.value, 0);
+    if(otherVal > 0) chartData.push({ name: 'Other', value: otherVal });
+
+    chart.setOption({
+        title: {
+            text: titleText,
+            left: 'center',
+            textStyle: { color: '#333', fontSize: 13, fontWeight: 'normal' }
+        },
+        tooltip: { trigger: 'item', formatter: '{b}: {c} ({d}%)' },
+        series: [{
+            type: 'pie',
+            radius: '65%', // 实心饼图
+            center: ['50%', '60%'],
+            itemStyle: { borderRadius: 0, borderColor: '#fff', borderWidth: 1 },
+            label: {
+                show: true,
+                position: 'outside',
+                formatter: '{b}',
+                fontSize: 10,
+                color: '#666'
+            },
+            data: chartData,
+            // 经典的深蓝到浅蓝配色
+            color: ['#003d73', '#0054a6', '#0070d2', '#3296ed', '#82c0f7']
+        }]
+    });
+}
+
+// --- 拍摄热力图逻辑 ---
 function updateHeatmapChart(year) {
     const chart = echarts.init(document.getElementById('chart-heatmap'));
     charts['chart-heatmap'] = chart;
@@ -128,8 +210,8 @@ function updateHeatmapChart(year) {
         },
         calendar: {
             top: 30, left: 30, right: 30, range: year, cellSize: ['auto', 13],
-            dayLabel: { fontSize: 10, firstDay: 1 },
-            monthLabel: { fontSize: 10 },
+            dayLabel: { fontSize: 10, firstDay: 1, color: '#999' },
+            monthLabel: { fontSize: 10, color: '#999' },
             itemStyle: { borderWidth: 2, borderColor: '#fff' },
             splitLine: { show: false }
         },
@@ -137,37 +219,7 @@ function updateHeatmapChart(year) {
     });
 }
 
-function renderRankedChart(field, chartId, tableId) {
-    const counts = {};
-    allData.forEach(item => { if(item[field]) counts[item[field]] = (counts[item[field]] || 0) + 1; });
-    const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([name, value]) => ({ name, value }));
-    const total = allData.length;
-
-    const tbody = document.getElementById(tableId);
-    tbody.innerHTML = sorted.slice(0, 15).map((item, index) => `
-        <tr>
-            <td class="font-bold text-gray-400 w-8">${index + 1}</td>
-            <td class="font-bold">${item.name}</td>
-            <td class="text-right">${item.value}</td>
-            <td class="text-right text-blue-500 font-medium">${((item.value/total)*100).toFixed(1)}%</td>
-        </tr>
-    `).join('');
-
-    const chart = echarts.init(document.getElementById(chartId));
-    charts[chartId] = chart;
-    chart.setOption({
-        tooltip: { trigger: 'item', formatter: '{b}: {c} ({d}%)' },
-        series: [{
-            type: 'pie', radius: ['40%', '70%'],
-            itemStyle: { borderRadius: 2, borderColor: '#fff', borderWidth: 2 },
-            label: { show: false },
-            data: sorted.slice(0, 10),
-            color: ['#282828', '#3b82f6', '#4b5563', '#94a3b8', '#cbd5e1', '#e2e8f0']
-        }]
-    });
-}
-
-// --- 基础过滤逻辑 ---
+// --- 基础过滤逻辑 (保持不变) ---
 function initFilters() {
     const getUnique = (field) => [...new Set(allData.map(item => item[field]))].filter(v => v).sort();
     const populate = (id, values) => {

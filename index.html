@@ -10,56 +10,32 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
     <style>
-        /* 1. 主页面背景色与基础文字颜色 */
         body { background-color: #ECECEC; color: #333; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        
-        /* 2. 卡片样式：回归白底、细微投影，模仿 JetPhotos 质感 */
-        .jet-card { 
-            background: white; 
-            border-radius: 0px; 
-            border: 0px solid #ddd; 
-            border-top: 0px solid #909090; 
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05); 
-        }
-        
-        /* 3. 地图边框处理 */
+        .jet-card { background: white; border-radius: 0px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
         #map { background: #f0f0f0; }
-        
-        /* 4. 统计数字字体 */
         .stat-value { font-family: 'Arial Black', sans-serif; color: #282828; }
-
-        /* 5. 统一标题样式 */
         .section-title { 
-            font-size: 0.875rem; 
-            font-weight: 800; 
-            text-transform: uppercase; 
-            letter-spacing: 0.15em; 
-            border-left: 4px solid #282828; 
-            padding-left: 0.75rem;
-            color: #444;
+            font-size: 0.875rem; font-weight: 800; text-transform: uppercase; 
+            letter-spacing: 0.15em; border-left: 4px solid #282828; 
+            padding-left: 0.75rem; color: #444;
         }
     </style>
 </head>
 <body class="pb-20">
 
     <nav class="bg-[#282828] text-white shadow-md relative h-[52px]">
-        
         <div class="w-full h-full flex justify-between items-center px-10">
             <a href="index.html" class="text-xl font-bold tracking-tighter italic hover:opacity-90 transition">
-                JET<span class="text-blue-500">PHOTOS</span>
+                Plane<span class="text-blue-500">Pictures</span>
             </a>
-            
             <div class="flex items-center space-x-10">
                 <div class="space-x-8 text-xs uppercase tracking-widest font-bold hidden md:flex">
                     <a href="index.html" class="text-blue-400">Home</a>
                     <a href="gallery.html" class="text-white hover:text-blue-300 transition">Photos</a>
                     <a href="stats.html" class="text-white hover:text-blue-300 transition">Stats</a>
                 </div>
-            
                 <div class="relative flex items-center">
-                    <input type="text" id="nav-search-input" 
-                           placeholder="Search Reg..." 
-                           class="bg-white text-black text-[11px] px-3 py-1.5 w-32 md:w-44 rounded-sm focus:outline-none placeholder-gray-400 font-sans">
+                    <input type="text" id="nav-search-input" placeholder="Search Reg..." class="bg-white text-black text-[11px] px-3 py-1.5 w-32 md:w-44 rounded-sm focus:outline-none placeholder-gray-400 font-sans">
                     <button onclick="performNavSearch()" class="absolute right-2 text-gray-400 hover:text-blue-500 transition">
                         <i class="fa fa-search text-xs"></i>
                     </button>
@@ -68,7 +44,7 @@
         </div>
     </nav>
 
-    <div class="relative h-48 w-full bg-cover bg-center border-b border-gray-300" style="background-image: url('https://picsum.photos/seed/3/1920/600');">
+    <div class="relative h-36 w-full bg-cover bg-center border-b border-gray-300" style="background-image: url('https://picsum.photos/seed/3/1920/600');">
         <div class="absolute inset-0 bg-black/40"></div>
         <div class="absolute bottom-8 left-10 flex items-end space-x-6 text-white">
             <img src="https://via.placeholder.com/100" class="w-24 h-24 border-4 border-white/30 rounded-sm shadow-xl">
@@ -81,35 +57,40 @@
 
     <main class="max-w-7xl mx-auto mt-8 grid grid-cols-12 gap-8 px-4">
         <aside class="col-span-3 space-y-6">
-            <div class="jet-card p-5">
-                <h3 class="text-[10px] font-black border-b border-gray-100 pb-2 mb-4 text-gray-400 uppercase tracking-widest">Photographer Info</h3>
-                <ul class="text-sm space-y-4">
-                    <li class="flex items-center text-gray-700 font-medium"><i class="fa fa-map-marker-alt w-6 text-blue-600"></i> Location: China</li>
-                    <li class="flex items-center text-gray-700 font-medium"><i class="fa fa-camera w-6 text-blue-600"></i> Body: Sony A7R5</li>
-                    <li class="flex items-center text-gray-700 font-medium"><i class="fa fa-bolt w-6 text-blue-600"></i> Favorite: 200-600mm</li>
-                </ul>
+            <div class="jet-card p-6">
+                <h3 class="text-[11px] font-black border-b border-gray-100 pb-3 mb-6 text-gray-400 uppercase tracking-widest">Photographer Info</h3>
+                <div id="gear-list" class="text-[11px]"></div>
             </div>
         </aside>
 
         <section class="col-span-9 space-y-8">
-            <div class="grid grid-cols-3 gap-4">
-                <div class="jet-card p-6 text-center">
-                    <div id="count-airlines" class="stat-value text-3xl mb-1">0</div>
-                    <div class="text-[10px] uppercase text-gray-500 font-bold tracking-widest">Airlines</div>
-                </div>
-                <div class="jet-card p-6 text-center">
-                    <div id="count-airports" class="stat-value text-3xl mb-1">0</div>
-                    <div class="text-[10px] uppercase text-gray-500 font-bold tracking-widest">Airports</div>
-                </div>
-                <div class="jet-card p-6 text-center">
-                    <div id="count-regs" class="stat-value text-3xl mb-1">0</div>
-                    <div class="text-[10px] uppercase text-gray-500 font-bold tracking-widest">Registrations</div>
-                </div>
+            
+            <div>
+                <h3 class="section-title mb-4">Editor's Picks</h3>
+                <div id="pinned-grid" class="grid grid-cols-3 gap-4">
+                    </div>
             </div>
 
-            <div class="jet-card">
-                <div class="p-2 bg-gray-50 text-[9px] font-bold uppercase tracking-widest border-w border-gray-100">Airport Footprints Map</div>
-                <div id="map" class="h-[420px] w-full"></div>
+            <div class="flex gap-4">
+                <div class="jet-card flex-1">
+                    <div class="p-2 bg-gray-50 text-[9px] font-bold uppercase tracking-widest border-b border-gray-100 italic">Airport Footprints Map</div>
+                    <div id="map" class="h-[432px] w-full"></div>
+                </div>
+                
+                <div class="w-64 space-y-4 flex flex-col">
+                    <div class="jet-card p-5 flex-1 flex flex-col justify-center text-center">
+                        <div id="count-airlines" class="stat-value text-2xl mb-1">0</div>
+                        <div class="text-[9px] uppercase text-gray-500 font-bold tracking-widest">Airlines</div>
+                    </div>
+                    <div class="jet-card p-5 flex-1 flex flex-col justify-center text-center">
+                        <div id="count-airports" class="stat-value text-2xl mb-1">0</div>
+                        <div class="text-[9px] uppercase text-gray-500 font-bold tracking-widest">Airports</div>
+                    </div>
+                    <div class="jet-card p-5 flex-1 flex flex-col justify-center text-center border-b-4 border-blue-500">
+                        <div id="count-regs" class="stat-value text-2xl mb-1">0</div>
+                        <div class="text-[9px] uppercase text-gray-500 font-bold tracking-widest">Registrations</div>
+                    </div>
+                </div>
             </div>
 
             <div class="grid grid-cols-2 gap-4">
@@ -120,7 +101,6 @@
     </main>
 
     <div class="max-w-7xl mx-auto px-4 mt-16 space-y-16">
-        
         <section>
             <h3 class="section-title mb-6">Featured Photos</h3>
             <div id="featured-grid" class="grid grid-cols-4 gap-4"></div>
@@ -137,8 +117,9 @@
                 <a href="gallery.html" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 transition">VIEW FULL DATABASE →</a>
             </div>
             <div id="latest-grid" class="grid grid-cols-4 gap-4"></div>
+            <div id="latest-sentinel" class="h-8"></div>
+            <div id="latest-loading" class="text-center text-[10px] uppercase tracking-widest font-bold text-gray-500 py-4 hidden">Loading more...</div>
         </section>
-
     </div>
 
     <script src="config.js"></script>
