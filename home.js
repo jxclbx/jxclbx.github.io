@@ -1,7 +1,3 @@
-// =======================
-// home.js (置顶图逻辑版)
-// =======================
-
 // 在此指定您最满意的 3 张图的 ID (在 data.json 中的 id)
 const PINNED_IDS = [1, 2, 3]; 
 
@@ -111,11 +107,11 @@ async function initHome() {
                     <div class="aspect-video overflow-hidden bg-black">
                         <img src="${p.src}" class="w-full h-full object-cover" loading="lazy">
                     </div>
-                    <div class="p-2 bg-[#282828] text-[10px] grid grid-cols-2 gap-1 text-white leading-tight font-sans">
-                        <div class="text-left">${p.airline}</div>
-                        <div class="text-right">${p.reg}</div>
-                        <div class="text-left">${p.date}</div>
-                        <div class="text-right">${p.model}</div>
+                    <div class="p-2 bg-[#282828] text-[10px] grid grid-cols-2 gap-x-2 gap-y-1 text-white leading-tight font-sans">
+                        <div class="text-left truncate min-w-0">${p.airline}</div>
+                        <div class="text-right truncate min-w-0">${p.reg}</div>
+                        <div class="text-left truncate min-w-0">${p.date}</div>
+                        <div class="text-right truncate min-w-0">${p.model}</div>
                     </div>
                 </a>
             </div>

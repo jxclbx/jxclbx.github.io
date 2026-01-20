@@ -15,7 +15,7 @@ airlines = [
     "Japan Airlines", "Korean Air", "Turkish Airlines"
 ]
 airports = ["SIN", "XSP", "QPG"]
-camera_ids = ["C1", "C2", "C3"]
+camera_ids = ["C1", "C2"]
 lens_ids = ["L1", "L2", "L3"]
 
 data = []

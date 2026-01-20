@@ -57,17 +57,16 @@ function renderPage(page) {
         const card = document.createElement('div');
         // 移除边框和阴影，保持纯粹扁平化
         card.className = 'photo-card overflow-hidden rounded-sm';
-        
         card.innerHTML = `
             <a href="photo.html?id=${photo.id}" class="block">
             <div class="aspect-video overflow-hidden bg-black">
                 <img src="${photo.src}" class="w-full h-full object-cover" loading="lazy">
             </div>
-            <div class="p-2 bg-[#282828] text-[10px] grid grid-cols-2 gap-1 text-white leading-tight font-sans">
-                <div class="text-left">${photo.airline}</div>
-                <div class="text-right">${photo.reg}</div>
-                <div class="text-left">${photo.date}</div>
-                <div class="text-right">${photo.model}</div>
+            <div class="p-2 bg-[#282828] text-[10px] grid grid-cols-2 gap-x-2 gap-y-1 text-white leading-tight font-sans">
+                <div class="text-left truncate min-w-0">${photo.airline}</div>
+                <div class="text-right truncate min-w-0">${photo.reg}</div>
+                <div class="text-left truncate min-w-0">${photo.date}</div>
+                <div class="text-right truncate min-w-0">${photo.model}</div>
             </div>
             </a>
         `;
