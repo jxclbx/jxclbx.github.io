@@ -191,7 +191,7 @@ function initCharts(data) {
         tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
         grid: { left: '10%', right: '10%', bottom: '15%', top: '20%', containLabel: true },
         xAxis: { type: 'category', data: years, axisLine: { lineStyle: { color: '#ddd' } } },
-        yAxis: { type: 'value', name: 'Photos uploaded', nameLocation: 'middle', nameGap: 40, splitLine: { lineStyle: { type: 'dashed', color: '#eee' } } },
+        yAxis: { type: 'value', splitLine: { lineStyle: { type: 'dashed', color: '#eee' } } },
         series: [{ name: 'Photos uploaded', type: 'bar', data: yearlyCounts, barWidth: '40%', itemStyle: { color: '#0054a6', borderRadius: [2, 2, 0, 0] } }]
     });
 

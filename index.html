@@ -14,9 +14,9 @@
         .jet-card { background: white; border-radius: 0px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
         #map { background: #f0f0f0; }
         .stat-value { font-family: 'Arial Black', sans-serif; color: #282828; }
-        .section-title { 
-            font-size: 0.875rem; font-weight: 800; text-transform: uppercase; 
-            letter-spacing: 0.15em; border-left: 4px solid #282828; 
+        .section-title {
+            font-size: 0.875rem; font-weight: 800; text-transform: uppercase;
+            letter-spacing: 0.15em; border-left: 4px solid #282828;
             padding-left: 0.75rem; color: #444;
         }
     </style>
@@ -55,60 +55,85 @@
         </div>
     </div>
 
-    <main class="max-w-7xl mx-auto mt-8 grid grid-cols-12 gap-8 px-4">
-        <aside class="col-span-3 space-y-6">
+    <!-- ✅ 手机：单列；桌面：12列 -->
+    <main class="max-w-7xl mx-auto mt-8 grid grid-cols-1 md:grid-cols-12 gap-8 px-4">
+
+        <!-- ✅ 桌面侧栏：手机隐藏（保留原结构） -->
+        <aside class="hidden md:block md:col-span-3 space-y-6">
             <div class="jet-card p-6">
                 <h3 class="text-[11px] font-black border-b border-gray-100 pb-3 mb-6 text-gray-400 uppercase tracking-widest">Photographer Info</h3>
                 <div id="gear-list" class="text-[11px]"></div>
             </div>
         </aside>
 
-        <section class="col-span-9 space-y-8">
-            
+        <!-- ✅ 主内容：手机全宽；桌面右侧9列 -->
+        <section class="md:col-span-9 space-y-8">
+
+            <!-- 1) Editor’s Picks -->
             <div>
                 <h3 class="section-title mb-4">Editor's Picks</h3>
-                <div id="pinned-grid" class="grid grid-cols-3 gap-4">
-                    </div>
+
+                <!-- ✅ 手机2列，桌面3列 -->
+                <div id="pinned-grid" class="grid grid-cols-2 md:grid-cols-3 gap-4"></div>
             </div>
 
-            <div class="flex gap-4">
-                <div class="jet-card flex-1">
-                    <div class="p-2 bg-gray-50 text-[9px] font-bold uppercase tracking-widest border-b border-gray-100 italic">Airport Footprints Map</div>
-                    <div id="map" class="h-[432px] w-full"></div>
-                </div>
-                
-                <div class="w-64 space-y-4 flex flex-col">
-                    <div class="jet-card p-5 flex-1 flex flex-col justify-center text-center">
-                        <div id="count-airlines" class="stat-value text-2xl mb-1">0</div>
-                        <div class="text-[9px] uppercase text-gray-500 font-bold tracking-widest">Airlines</div>
-                    </div>
-                    <div class="jet-card p-5 flex-1 flex flex-col justify-center text-center">
-                        <div id="count-airports" class="stat-value text-2xl mb-1">0</div>
-                        <div class="text-[9px] uppercase text-gray-500 font-bold tracking-widest">Airports</div>
-                    </div>
-                    <div class="jet-card p-5 flex-1 flex flex-col justify-center text-center border-b-4 border-blue-500">
-                        <div id="count-regs" class="stat-value text-2xl mb-1">0</div>
-                        <div class="text-[9px] uppercase text-gray-500 font-bold tracking-widest">Registrations</div>
-                    </div>
+            <!-- 2) Photographer Info：手机显示（放在 Editor’s Picks 下） -->
+            <div class="md:hidden">
+                <div class="jet-card p-6">
+                    <h3 class="text-[11px] font-black border-b border-gray-100 pb-3 mb-6 text-gray-400 uppercase tracking-widest">Photographer Info</h3>
+                    <div id="gear-list-mobile" class="text-[11px]"></div>
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 gap-4">
+            <!-- 3) 三个数据横排（手机），4) 地图（在下面） -->
+            <!-- ✅ 手机：先 stats 再 map；桌面：map 左 stats 右 -->
+<div class="flex flex-col md:flex-row gap-4">
+
+    <div class="order-1 md:order-2 w-full md:w-64 md:h-[432px]">
+        <div class="grid grid-cols-3 md:flex md:flex-col md:h-full gap-4">
+            
+            <div class="jet-card p-5 flex flex-col justify-center text-center md:flex-1">
+                <div id="count-airlines" class="stat-value text-2xl mb-1">0</div>
+                <div class="text-[9px] uppercase text-gray-500 font-bold tracking-widest">Airlines</div>
+            </div>
+
+            <div class="jet-card p-5 flex flex-col justify-center text-center md:flex-1">
+                <div id="count-airports" class="stat-value text-2xl mb-1">0</div>
+                <div class="text-[9px] uppercase text-gray-500 font-bold tracking-widest">Airports</div>
+            </div>
+
+            <div class="jet-card p-5 flex flex-col justify-center text-center md:flex-1">
+                <div id="count-regs" class="stat-value text-2xl mb-1">0</div>
+                <div class="text-[9px] uppercase text-gray-500 font-bold tracking-widest">Registrations</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="order-2 md:order-1 jet-card flex-1">
+        <div class="p-2 bg-gray-50 text-[9px] font-bold uppercase tracking-widest border-b border-gray-100 italic">Airport Footprints Map</div>
+        <div id="map" class="h-[320px] md:h-[402px] w-full"></div>
+    </div>
+
+</div>
+
+            <!-- 5) 两张图表：手机纵向；桌面两列 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="jet-card h-64 p-4" id="chart-growth"></div>
                 <div class="jet-card h-64 p-4" id="chart-airline"></div>
             </div>
+
         </section>
     </main>
 
     <div class="max-w-7xl mx-auto px-4 mt-16 space-y-16">
         <section>
             <h3 class="section-title mb-6">Featured Photos</h3>
-            <div id="featured-grid" class="grid grid-cols-4 gap-4"></div>
+            <div id="featured-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
         </section>
 
         <section>
             <h3 class="section-title mb-6" style="border-left-color: #10b981;">Random Discovery</h3>
-            <div id="random-grid" class="grid grid-cols-4 gap-4"></div>
+            <div id="random-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
         </section>
 
         <section>
@@ -116,7 +141,7 @@
                 <h3 class="section-title">Latest Uploads</h3>
                 <a href="gallery.html" class="text-[10px] font-bold text-blue-600 hover:text-blue-800 transition">VIEW FULL DATABASE →</a>
             </div>
-            <div id="latest-grid" class="grid grid-cols-4 gap-4"></div>
+            <div id="latest-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
             <div id="latest-sentinel" class="h-8"></div>
             <div id="latest-loading" class="text-center text-[10px] uppercase tracking-widest font-bold text-gray-500 py-4 hidden">Loading more...</div>
         </section>
@@ -124,5 +149,24 @@
 
     <script src="config.js"></script>
     <script src="home.js"></script>
+
+    <script>
+        // ✅ 为了“不改 home.js”，这里用一行小桥接：把 gear-list 内容同步到手机版容器
+        // 如果你 home.js 本来就是往 #gear-list 填内容，这样手机也能显示同样的内容。
+        // 如果你不想加这段，也可以直接把 gear-list-mobile 的 id 改回 gear-list，但那会影响桌面侧栏。
+        const syncGear = () => {
+            const desktop = document.getElementById('gear-list');
+            const mobile = document.getElementById('gear-list-mobile');
+            if (desktop && mobile && mobile.innerHTML.trim() === '') {
+                mobile.innerHTML = desktop.innerHTML;
+            }
+        };
+        // DOM加载后同步一次，后面 home.js 异步填充的话，稍后再同步几次兜底
+        window.addEventListener('load', () => {
+            syncGear();
+            setTimeout(syncGear, 300);
+            setTimeout(syncGear, 800);
+        });
+    </script>
 </body>
 </html>

@@ -64,8 +64,8 @@
 
     <main class="max-w-6xl mx-auto px-4 mt-8">
         
+        <h3 class="section-title mb-8">Advanced Filter</h3>
         <section class="jet-card p-8 mb-10">
-            <h3 class="section-title mb-8">Advanced Filter / 深度筛选</h3>
             <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
                 <div>
                     <label class="block text-[10px] font-bold text-gray-500 uppercase mb-2">Airline</label>
@@ -102,22 +102,22 @@
             </div>
             <div class="mt-8 flex justify-end">
                 <button onclick="applyFilters()" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-3 px-10 rounded-sm transition uppercase tracking-widest shadow-lg">
-                    Show Results / 显示结果
+                    Show Results
                 </button>
             </div>
         </section>
 
         <section class="space-y-10">
-            <h3 class="section-title mb-6">Database Statistics / 数据统计</h3>
+            <h3 class="section-title mb-6">Database Statistics</h3>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="jet-card p-6">
-                    <div class="text-[10px] font-bold text-gray-400 mb-4 uppercase tracking-widest">Yearly Activity / 年度统计</div>
+                    <div class="text-[10px] font-bold text-gray-400 mb-4 uppercase tracking-widest">Yearly Activity</div>
                     <div id="chart-yearly" class="w-full h-[300px]"></div>
                 </div>
                 <div class="jet-card p-6">
                     <div class="text-[10px] font-bold text-gray-400 mb-4 uppercase tracking-widest flex items-center">
-                        Monthly Distribution / 月度细分 (
+                        Monthly Distribution (
                         <select id="monthly-year-select" class="custom-select text-blue-600 font-bold ml-1">
                             </select>
                         )
@@ -128,9 +128,9 @@
 
             <div class="jet-card p-6">
                 <div class="flex justify-between items-center mb-6">
-                    <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Shooting Calendar / 拍摄日历</div>
+                    <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Shooting Calendar</div>
                     <div class="flex items-center">
-                        <span class="text-[10px] font-bold text-black uppercase mr-3">选择年份</span>
+                        <span class="text-[10px] font-bold text-black uppercase mr-3">choose</span>
                         <select id="heatmap-year-select" class="custom-select text-blue-600 font-bold text-xs"></select>
                     </div>
                 </div>
@@ -138,7 +138,7 @@
             </div>
 
             <div class="jet-card p-6">
-                <div class="text-[10px] font-bold text-gray-400 mb-6 uppercase tracking-widest">Airline Distribution / 航司分布</div>
+                <div class="text-[10px] font-bold text-gray-400 mb-6 uppercase tracking-widest">Airline Distribution</div>
                 <div class="flex flex-col md:flex-row gap-8">
                     <div id="chart-airline" class="w-full md:w-1/2 h-[400px]"></div>
                     <div class="w-full md:w-1/2 overflow-auto">
@@ -152,12 +152,12 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div class="jet-card p-6">
-                    <div class="text-[10px] font-bold text-gray-400 mb-4 uppercase tracking-widest">Aircraft Types / 机型</div>
+                    <div class="text-[10px] font-bold text-gray-400 mb-4 uppercase tracking-widest">Aircraft Types</div>
                     <div id="chart-model" class="w-full h-[300px] mb-4"></div>
                     <table class="w-full rank-table"><tbody id="table-model"></tbody></table>
                 </div>
                 <div class="jet-card p-6">
-                    <div class="text-[10px] font-bold text-gray-400 mb-4 uppercase tracking-widest">Airports / 机场</div>
+                    <div class="text-[10px] font-bold text-gray-400 mb-4 uppercase tracking-widest">Airports</div>
                     <div id="chart-airport" class="w-full h-[300px] mb-4"></div>
                     <table class="w-full rank-table"><tbody id="table-airport"></tbody></table>
                 </div>

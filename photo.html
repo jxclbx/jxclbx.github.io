@@ -23,7 +23,6 @@
 <body class="pb-20">
 
     <nav class="bg-[#282828] text-white shadow-md relative h-[52px]">
-        
         <div class="w-full h-full flex justify-between items-center px-10">
             <a href="index.html" class="text-xl font-bold tracking-tighter italic hover:opacity-90 transition">
                 Plane<span class="text-blue-500">Pictures</span>
@@ -54,7 +53,6 @@
         </div>
 
         <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-gray-300 pt-8">
-
             <div class="space-y-6">
                 <div>
                     <p class="info-label">Registration</p>
@@ -63,6 +61,7 @@
                 <div>
                     <p class="info-label">Aircraft Type</p>
                     <a id="link-model" href="#" class="info-value hover:text-blue-600 hover:underline transition-colors">-</a>
+                    <span id="info-sub-model" class="info-value text-gray-500 ml-1"></span>
                 </div>
                 <div>
                     <p class="info-label">Airline</p>
@@ -91,6 +90,11 @@
                     <p class="info-value text-gray-700">jxclbx</p>
                 </div>
             </div>
+        </div>
+
+        <div class="mt-12 pt-6 border-t border-gray-200">
+            <p class="info-label">Photo Remarks</p>
+            <p id="info-remarks" class="text-sm text-gray-600 italic leading-relaxed mt-2">No remarks available for this photo.</p>
         </div>
     </main>
 

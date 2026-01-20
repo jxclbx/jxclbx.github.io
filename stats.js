@@ -245,22 +245,37 @@ function updateRegDropdown() {
     const model = document.getElementById('select-model').value;
     const featured = document.getElementById('select-featured').value;
     const regSelect = document.getElementById('select-reg');
-    if (!airline && !airport && !model && !featured) {
+
+    const hasAnyFilter = !!(airline || airport || model || featured);
+
+    // 两套样式：禁用灰色 / 启用正常
+    const disabledClass = "w-full bg-gray-100 border border-gray-300 text-sm p-2.5 rounded-sm cursor-not-allowed opacity-50 transition-all";
+    const enabledClass  = "w-full bg-gray-50 border border-gray-300 text-sm p-2.5 rounded-sm focus:ring-blue-500 focus:border-blue-500 transition-all";
+
+    if (!hasAnyFilter) {
         regSelect.disabled = true;
+        regSelect.className = disabledClass;
         regSelect.innerHTML = '<option value="">Select filters first...</option>';
         return;
     }
+
+    // 只要其它条件选了至少一个，就启用并恢复正常样式
     regSelect.disabled = false;
-    const available = allData.filter(item => 
+    regSelect.className = enabledClass;
+
+    const available = allData.filter(item =>
         (!airline || item.airline === airline) &&
         (!airport || item.airport === airport) &&
         (!model || item.model === model) &&
         (!featured || String(item.featured) === featured)
     );
+
     const regs = [...new Set(available.map(item => item.reg))].filter(v => v).sort();
-    regSelect.innerHTML = `<option value="">Any Registration (${regs.length})</option>` + 
+    regSelect.innerHTML =
+        `<option value="">Any Registration (${regs.length})</option>` +
         regs.map(r => `<option value="${r}">${r}</option>`).join('');
 }
+
 
 function applyFilters() {
     const filters = {

@@ -26,28 +26,39 @@ async function loadPhotoDetail() {
             document.title = `${photo.reg} | ${photo.model} - Details`;
 
             // --- 核心增强：辅助函数，用于同时更新文字和筛选链接 ---
-            // 建议在 photo-detail.js 中这样写，链接更简洁
             const updateLink = (id, key, value) => {
                 const el = document.getElementById(id);
                 if (el && value) {
                     el.innerText = value;
-                    // 生成简洁的链接：gallery.html?airline=Emirates
                     el.href = `gallery.html?${key}=${encodeURIComponent(value)}`;
                 }
             };
 
-            // 映射字段到 gallery.js 能够识别的查询参数
+            // 1. 映射带筛选功能的链接
             updateLink('link-reg', 'reg', photo.reg);
             updateLink('link-model', 'model', photo.model);
             updateLink('link-airline', 'airline', photo.airline);
             updateLink('link-date', 'date', photo.date);
             updateLink('link-airport', 'airport', photo.airport);
 
-            // 导航栏注册号 (保持纯文字)
+            // 2. 映射不带筛选功能的纯文字字段
+            // 细分机型 (Sub-model)
+            const subModelEl = document.getElementById('info-sub-model');
+            if (subModelEl) {
+                // 如果 JSON 中有 sub_model 则显示，并在前面加个空格或括号区分
+                subModelEl.innerText = photo.sub_model ? `(${photo.sub_model})` : "";
+            }
+
+            // 图片备注 (Remarks)
+            const remarksEl = document.getElementById('info-remarks');
+            if (remarksEl) {
+                remarksEl.innerText = photo.remarks || "No remarks provided for this photo.";
+            }
+
+            // 3. 其他原有逻辑保持不变
             const navReg = document.getElementById('nav-reg');
             if (navReg) navReg.innerText = photo.reg;
 
-            // 器材信息 (保持纯文字)
             if (typeof GEAR !== 'undefined') {
                 const cameraName = GEAR.cameras[photo.camera_id] || "Unknown Camera";
                 const lensName = GEAR.lenses[photo.lens_id] || "Unknown Lens";
@@ -67,22 +78,14 @@ document.getElementById('fullscreen-overlay').onclick = function() {
 
 loadPhotoDetail();
 
-/**
- * 执行导航栏搜索逻辑
- * 跳转至 gallery.html 并应用注册号过滤参数
- */
 function performNavSearch() {
     const input = document.getElementById('nav-search-input');
     const query = input.value.trim();
-    
     if (query) {
-        // 使用之前 gallery.js 已经支持的多条件过滤格式
-        // 自动跳转并筛选对应的注册号
         window.location.href = `gallery.html?reg=${encodeURIComponent(query)}`;
     }
 }
 
-// 绑定回车键事件，方便用户直接按 Enter 搜索
 document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('nav-search-input');
     if (searchInput) {
