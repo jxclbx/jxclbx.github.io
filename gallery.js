@@ -108,7 +108,7 @@ function renderPagination() {
 
     pagination.appendChild(createBtn('<i class="fa fa-angle-left"></i>', currentPage - 1, false, currentPage === 1));
 
-    const range = 2;
+    const range = 1;
     let pages = [];
     if (totalPages <= 7) {
         for (let i = 1; i <= totalPages; i++) pages.push(i);

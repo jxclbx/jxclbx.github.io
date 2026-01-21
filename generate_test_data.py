@@ -4,25 +4,24 @@ from tqdm import tqdm
 
 # 1. 基础数据定义
 models = [
-    "Airbus A350-941", "Boeing 787-9 Dreamliner", "COMAC C919", "Airbus A320-251N", 
-    "Boeing 737-800", "ARJ21-700", "Boeing 747-8", "Airbus A380-800", 
-    "Boeing 777-300ER", "Airbus A321XLR", "Embraer E195-E2", "Bombardier CRJ900"
+    "Boeing 737-800", "ARJ21-700", "Boeing 747-8", "Airbus A380-800",
+    "Boeing 777-300ER", "Airbus A321XLR", "Embraer E190-E2", "Bombardier CRJ900",
+    "Airbus A350-900", "Boeing 787-9", "Comac C919"
 ]
 
 # 映射细分机型 (Sub-model)，用于增加专业性展示
 sub_model_map = {
-    "Airbus A350-941": "A350-900",
-    "Boeing 787-9 Dreamliner": "B787-9",
-    "COMAC C919": "C919-100A",
-    "Airbus A320-251N": "A320neo",
     "Boeing 737-800": "B737-8AS",
     "ARJ21-700": "ARJ21-700STD",
     "Boeing 747-8": "B747-89L",
     "Airbus A380-800": "A380-841",
     "Boeing 777-300ER": "B777-36NER",
     "Airbus A321XLR": "A321-253NY",
-    "Embraer E195-E2": "E195-E2",
-    "Bombardier CRJ900": "CL-600-2D24"
+    "Embraer E190-E2": "ERJ-190-300 STD",
+    "Bombardier CRJ900": "CL-600-2D24",
+    "Airbus A350-900": "A350-941",
+    "Boeing 787-9": "B787-9 Dreamliner",
+    "Comac C919": "C919-100",
 }
 
 # 备注模板池
@@ -48,11 +47,11 @@ camera_ids = ["C1", "C2"]
 lens_ids = ["L1", "L2", "L3"]
 
 data = []
-count = 100000  # 定义生成数量
+count = 200000  # 定义生成数量
 
 # 2. 数据生成循环
 for i in tqdm(range(1, count + 1), desc="Generating data"):
-    model = random.choices(models, weights=[5, 10, 3, 8, 15, 2, 1, 1, 4, 2, 3, 1], k=1)[0]
+    model = random.choices(models, weights=[5, 10, 3, 8, 15, 2, 1, 1, 4, 2, 3], k=1)[0]
     airline = random.choices(airlines, weights=[10, 10, 15, 5, 8, 12, 7, 6, 4, 3, 5, 5, 2, 2, 6], k=1)[0]
     airport = random.choices(airports, weights=[50, 30, 20], k=1)[0]
     
