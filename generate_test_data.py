@@ -47,7 +47,7 @@ camera_ids = ["C1", "C2"]
 lens_ids = ["L1", "L2", "L3"]
 
 data = []
-count = 200000  # 定义生成数量
+count = 3000  # 定义生成数量
 
 # 2. 数据生成循环
 for i in tqdm(range(1, count + 1), desc="Generating data"):
